@@ -1,7 +1,8 @@
 import requests
 import pytest
 from constants import BASE_URL, USER_ID, UPDATED_NAME, INVALID_USER_ID
-from conftest import add_user, sample_user, get_user_by_id
+from conftest import add_user, get_user_by_id
+
 
 def test_edit_user(sample_user):
     add_user(sample_user)
