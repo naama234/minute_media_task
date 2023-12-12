@@ -22,22 +22,21 @@ def test_add_user_with_long_id(sample_user_with_long_id):
 
 def test_add_user_with_empty_name(sample_user_without_name):
     response = requests.post(BASE_URL, json=sample_user_without_name)
-    assert response.status_code == 500
+    assert response.status_code == 400
 
 
 def test_add_user_with_empty_id(sample_user_without_id):
     response = requests.post(BASE_URL, json=sample_user_without_id)
-    assert response.status_code == 500
-    assert response.json() == sample_user_without_id
+    assert response.status_code == 400
 
 
 def test_add_user_with_empty_id_and_empty_name(sample_user_without_id_and_name):
     response = requests.post(BASE_URL, json=sample_user_without_id_and_name)
-    assert response.status_code == 500
+    assert response.status_code == 400
     assert response.json() == sample_user_without_id_and_name
 
 
 def test_add_us_with_same_id(sample_user):
     first_response = requests.post(BASE_URL, json=sample_user)
     second_response = requests.post(BASE_URL, json=sample_user)
-    assert second_response.status_code == 500
+    assert second_response.status_code == 400

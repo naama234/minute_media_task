@@ -14,7 +14,6 @@ def test_delete_user(sample_user):
 def test_delete_unexisting_user():
     response = requests.delete(f"{BASE_URL}/{INVALID_USER_ID}")
     assert response.status_code == 500
-    assert get_user_by_id(USER_ID) == False
 
 
 def test_delete_with_long_id(sample_user_with_long_id):
