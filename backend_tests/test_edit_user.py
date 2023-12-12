@@ -1,7 +1,7 @@
 import requests
 import pytest
 from constants import BASE_URL, USER_ID, UPDATED_NAME, INVALID_USER_ID
-from conftest import add_user, get_user_by_id
+from conftest import add_user, get_user_by_id, get_user_name_by_id
 
 
 def test_edit_user(sample_user):
@@ -10,7 +10,7 @@ def test_edit_user(sample_user):
     response = requests.put(f"{BASE_URL}/{USER_ID}", json=payload)
     assert response.status_code == 200
     assert response.json() == payload
-    assert get_user_by_id(USER_ID) == False
+    assert get_user_name_by_id(USER_ID) == UPDATED_NAME
 
 
 def test_edit_unexisting_user():

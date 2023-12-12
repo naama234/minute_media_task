@@ -22,7 +22,7 @@ def sample_user_with_long_name():
 @pytest.fixture
 def sample_user_with_long_id():
     return {
-        "name": LONG_NAME,
+        "name": NAME,
         "id": LONG_ID
     }
 
@@ -61,5 +61,21 @@ def get_user_by_id(user_id):
         return False
 
 
+def get_user_name_by_id(user_id):
+    response = requests.get(f"{BASE_URL}/{user_id}")
+    try:
+        return response.json()['name']
+    except requests.exceptions.JSONDecodeError:
+        return None
+
+
 def add_user(payload):
-    return requests.post(f"{BASE_URL}", json=payload)
+    response = requests.post(BASE_URL, json=payload)
+    return response
+
+
+def find_user_in_user_list(user_list, user):
+    for user_in_list in user_list:
+        if user['id'] == user_in_list['id'] and user['name'] == user_in_list['name']:
+            return True
+    return False
