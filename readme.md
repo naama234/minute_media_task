@@ -5,10 +5,11 @@
 `pip install selenium`
 
 **Bug report** -
-1. The response of delete request is 500 - the delete not working as expected.  Found in - `test_delete_user`.
+1. .
+2. The edit not working as expected, the name not updated. Found in `test_edit_user`
 
 **Documentation - Test plan**
-1. test_add_user:
+1. add_user:
     Create payload.
     Add the user with POST request.
     Excepted result -
@@ -19,7 +20,7 @@
     2. The response contain the expected data.
 
 
-2. test_get_user:
+2. get_user:
    Create new user.
    Get the user with GET request.
    Excepted result -
