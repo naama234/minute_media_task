@@ -99,6 +99,7 @@ test_add_user file
 
 
 6. test_add_user_with_empty_id_and_empty_name:
+
    Add user with empty name and id with POST request.
 
    **Excepted result:**
@@ -151,7 +152,7 @@ test edit user file -
 
 2. test_edit_unexisting_user:
 
-   1. Update username with id that not exist.
+   a. Update username with id that not exist.
 
    **Excepted result:**
 
@@ -187,7 +188,9 @@ test_get_users file
 
 
 test_delete_user file -
+
 1. test_delete_user -
+   
    a. Create simple user
 
    b. delete the user using DELETE request.
@@ -206,40 +209,40 @@ test_delete_user file -
 
    b. The response body not contain the deleted user.
 
-   c. Can nor test this case because there is a bug in the GET request.
+   c. Can not test this case because there is a bug in the GET request.
 
-   2. test_delete_unexisting_user -
+2. test_delete_unexisting_user -
 
-      a. Delete user with invalid id using DELETE request.
+   a. Delete user with invalid id using DELETE request.
 
-      **Excepted result:**
-      a. The status code of the response is 500.
+   **Excepted result:**
+   a. The status code of the response is 500.
 
-      **Excepted result:**
+   **Excepted result:**
 
-      a.The status code of the response is 500.
+   a.The status code of the response is 500.
    
    
 
-   3. test_delete_with_long_id -
+3. test_delete_with_long_id -
 
-      a. Delete user with long id using DELETE request.
+   a. Delete user with long id using DELETE request.
 
-      **Excepted result:**
+   **Excepted result:**
 
-      a.The status code of the response is 200.
+   a.The status code of the response is 200.
       
-      b. Check response body not contain the deleted user.
+   b. Check response body not contain the deleted user.
       
-      c. Get the deleted user and make sure it not exist.
+   c. Get the deleted user and make sure it not exist.
       
-      **Actual result:**
+   **Actual result:**
       
-      a.The status code of the response is 200.
+   a.The status code of the response is 200.
       
-      b. The response body not contain the deleted user.
+   b. The response body not contain the deleted user.
       
-      c. Can not test this case because there is a bug in the GET request.
+   c. Can not test this case because there is a bug in the GET request.
 
 
 test_get_user file -
