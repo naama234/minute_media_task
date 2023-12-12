@@ -1,5 +1,4 @@
 import requests
-import pytest
 from constants import BASE_URL, USER_ID, UPDATED_NAME, INVALID_USER_ID
 from conftest import add_user, get_user_by_id, get_user_name_by_id
 

@@ -1,5 +1,4 @@
 import requests
-import pytest
 from constants import BASE_URL, INVALID_USER_ID
 from conftest import get_user_by_id
 

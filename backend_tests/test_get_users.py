@@ -1,6 +1,5 @@
-import pytest
 import requests
-from conftest import NAME, USER_ID, BASE_URL, add_user, find_user_in_user_list, sample_user
+from conftest import BASE_URL, add_user, find_user_in_user_list
 
 
 def test_get_users(sample_user):
